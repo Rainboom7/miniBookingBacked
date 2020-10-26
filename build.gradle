@@ -17,6 +17,7 @@ allprojects {
         mavenCentral()
     }
 
+
     java {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -41,10 +42,22 @@ allprojects {
 jar {
     manifest {
         attributes 'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
-    }
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-}
 
+    }
+    subprojects.each { project ->
+        from project.configurations.archives.allArtifacts.files.collect { zipTree(it) }
+    }
+}
+task uberJar(type: Jar, dependsOn: subprojects.assemble) {
+    manifest {
+        attributes 'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
+    }
+    subprojects.each { project ->
+        from project.configurations.archives.allArtifacts.files.collect { zipTree(it) }
+    }
+
+   
+}
 dependencies {
     implementation(project(":services"))
     implementation(project(":security"))
