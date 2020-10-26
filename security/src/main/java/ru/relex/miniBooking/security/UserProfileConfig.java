@@ -17,11 +17,11 @@ public class UserProfileConfig {
     )
     UserProfile userProfile ( ) {
 
-        var profileObj = SecurityContextHolder.getContext ( ).getAuthentication ( ).getPrincipal ( );
+        Object profileObj = SecurityContextHolder.getContext ( ).getAuthentication ( ).getPrincipal ( );
         System.out.println (profileObj );
         if ( profileObj instanceof UserProfile )
             return (UserProfile) profileObj;
-        var profile = new UserProfile ( );
+        UserProfile profile = new UserProfile ( );
         profile.setUsername ( profileObj.toString ( ) );
         profile.setId ( -1 );
         return profile;

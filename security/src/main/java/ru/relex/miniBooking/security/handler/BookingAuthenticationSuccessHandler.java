@@ -42,7 +42,7 @@ public class BookingAuthenticationSuccessHandler implements AuthenticationSucces
     @Override
     public void onAuthenticationSuccess ( HttpServletRequest request, HttpServletResponse response, Authentication authentication ) throws IOException {
         response.setStatus ( HttpServletResponse.SC_OK );
-        var object = authentication.getPrincipal ( );
+        Object object = authentication.getPrincipal ( );
         if ( !( object instanceof UserDetails ) ) {
             logger.error ( "Expected user details but got {}", object.getClass ( ) );
             throw new ServerException ( "Unexpected authorization class" );

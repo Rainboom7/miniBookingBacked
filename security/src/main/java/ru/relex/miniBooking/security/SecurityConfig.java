@@ -88,7 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure ( HttpSecurity http ) throws Exception {
-        final var authFilter = new JsonAuthenthicationFilter ( authenticationManager ( ), new UserAuthentificationConverter ( ) );
+        final JsonAuthenthicationFilter authFilter = new JsonAuthenthicationFilter ( authenticationManager ( ), new UserAuthentificationConverter ( ) );
         authFilter.setRequestMatcher ( new AntPathRequestMatcher ( "/auth/login", "POST" ) );
         authFilter.setSuccessHandler ( new BookingAuthenticationSuccessHandler ( userAuthMapper ) );
         authFilter.setFailureHandler ( new AuthenticationFailureHandler ( ) {
@@ -101,7 +101,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             }
         } );
-        var encoder = passwordEncoder ( );
+        PasswordEncoder encoder = passwordEncoder ( );
         http
                 .cors ( ).and ( )
                 .csrf ( )./*csrfTokenRepository ( csrfTokenRepository ( ) ).ignoringAntMatchers ( "/auth/login" )*/disable ( )
@@ -154,12 +154,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManager ( );
     }
 
-    /*private CsrfTokenRepository csrfTokenRepository ( ) {
-        var csrfRepo = CookieCsrfTokenRepository.withHttpOnlyFalse ( );
-        csrfRepo.setCookiePath ( "/" );
-        csrfRepo.setHeaderName ( "BOOKING-TOKEN" );
-        return csrfRepo;
-    }*/
+
 
 
 }

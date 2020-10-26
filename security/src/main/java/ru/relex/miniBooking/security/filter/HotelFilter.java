@@ -42,7 +42,7 @@ public class HotelFilter extends GenericFilterBean {
     }
 
     private UserProfile getUserFromSession ( ) {
-        var object = SecurityContextHolder.getContext ( ).getAuthentication ( ).getPrincipal ( );
+        Object object = SecurityContextHolder.getContext ( ).getAuthentication ( ).getPrincipal ( );
         if ( object instanceof UserProfile )
             return (UserProfile) object;
         else return null;

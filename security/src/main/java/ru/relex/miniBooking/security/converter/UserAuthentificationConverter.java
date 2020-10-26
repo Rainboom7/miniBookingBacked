@@ -8,6 +8,7 @@ import ru.relex.miniBooking.security.model.UsernamePasswordRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class UserAuthentificationConverter implements AuthenticationConverter {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper ( );
@@ -15,7 +16,7 @@ public class UserAuthentificationConverter implements AuthenticationConverter {
     @Override
     public Authentication convert ( HttpServletRequest request ) {
         UsernamePasswordRequest usernamePasswordRequest;
-        try (var inputStream = request.getInputStream ( )) {
+        try (InputStream inputStream = request.getInputStream ( )) {
             usernamePasswordRequest = OBJECT_MAPPER.readValue ( inputStream, UsernamePasswordRequest.class );
         } catch ( IOException e ) {
             return null;
