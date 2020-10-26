@@ -32,8 +32,8 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public ExistingUser createUser ( NewUser user ) {
-        final var newPassword = passwordEncoder.encode ( user.getPassword ( ) );
-        final var model = userStruct.fromNewUser ( user, newPassword );
+        final String newPassword = passwordEncoder.encode ( user.getPassword ( ) );
+        final UserModel model = userStruct.fromNewUser ( user, newPassword );
         UserModel newUser = userMapper.createUser ( model );
         userMapper.saveUserRole ( newUser.getId ( ), user.getRole ( ) );
         return userStruct.toExistingUser ( model, newUser.getId ( ), newUser.getCreatedAt ( ) );

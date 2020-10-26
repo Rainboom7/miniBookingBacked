@@ -3,6 +3,7 @@ package ru.relex.miniBooking.services.internal.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.relex.miniBooking.bd.mapper.HotelMapper;
+import ru.relex.miniBooking.bd.model.HotelDetailModel;
 import ru.relex.miniBooking.bd.model.HotelModel;
 import ru.relex.miniBooking.commons.model.ListModel;
 import ru.relex.miniBooking.services.internal.HotelService;
@@ -33,9 +34,9 @@ public class HotelServiceImpl implements HotelService {
     @Override
     public Hotel addHotel ( NewHotel newHotel, long creatorId ) {
 
-        final var model = hotelStruct.createHotel ( newHotel );
-        final var newModel = hotelMapper.createHotel ( model );
-        final var hotel = hotelStruct.fromModel ( model, newModel.getId ( ), newModel.getCreatedAt ( ) );
+        final HotelModel model = hotelStruct.createHotel ( newHotel );
+        final HotelModel newModel = hotelMapper.createHotel ( model );
+        final Hotel hotel = hotelStruct.fromModel ( model, newModel.getId ( ), newModel.getCreatedAt ( ) );
         hotelMapper.addCreatedBy ( hotel.getId ( ), creatorId );
         return hotel;
 
@@ -80,7 +81,7 @@ public class HotelServiceImpl implements HotelService {
 
     @Override
     public HotelDetail getById ( long id ) {
-        final var found = hotelMapper.findById ( id );
+        final HotelDetailModel found = hotelMapper.findById ( id );
         if ( found != null )
             found.setId ( id );
         return hotelStruct.fromDetailModel ( found );
@@ -95,7 +96,7 @@ public class HotelServiceImpl implements HotelService {
 
     @Override
     public Hotel updateHotel ( long id, @Valid NewHotel updatedHotel ) {
-        final var model = hotelStruct.createHotel ( updatedHotel );
+        final HotelModel model = hotelStruct.createHotel ( updatedHotel );
         model.setId ( id );
         hotelMapper.updateHotel ( model );
         return hotelStruct.fromModel ( model );

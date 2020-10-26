@@ -26,13 +26,13 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public void addMessage ( Message message, String sentBy ) {
-        final var model = chatStruct.toModel ( message, sentBy );
+        final MessageModel model = chatStruct.toModel ( message, sentBy );
         chatMapper.addMessage ( model );
     }
 
     @Override
     public ChatModel createChat ( long landlordId, long tenantId ) {
-        var chat = chatMapper.getChat ( landlordId, tenantId );
+        ChatModel chat = chatMapper.getChat ( landlordId, tenantId );
         if ( chat == null )
             chat = this.chatMapper.createChat ( landlordId, tenantId );
         return chat;

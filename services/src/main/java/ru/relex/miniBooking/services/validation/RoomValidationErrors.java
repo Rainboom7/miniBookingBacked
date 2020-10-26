@@ -13,7 +13,7 @@ public class RoomValidationErrors {
     public static final String NUBEROFBEDS_IS_INVALID = "NUBEROFBEDS_IS_INVALID";
     public static final String DESCRIPTION_IS_INVALID = "DESCRIPTION_IS_INVALID";
     public static final String DAILYPRICE_IS_INVALID = "DAILYPRICE_IS_INVALID";
-    private static final Map<String, String> ERRORS = new HashMap<> ( ) {
+    private static final Map<String, String> ERRORS = new HashMap<String, String> ( ) {
         {
                     put ( HOTELID_IS_INVALID, "Hotel with such id does not exist" );
                     put ( NUBEROFBEDS_IS_INVALID, "Minimum number of beds - 1" );

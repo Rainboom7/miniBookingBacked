@@ -32,15 +32,15 @@ public class RoomServiceImpl implements RoomService {
     public void addRooms ( @NotNull List<NewRoom> newRooms, @NotNull long hotelId ) {
         for (NewRoom newRoom : newRooms
                 ) {
-            final var model = roomStruct.createRoom(newRoom,hotelId);
-            final var newModel = roomMapper.addRoom(model);
+            final RoomModel model = roomStruct.createRoom(newRoom,hotelId);
+            final RoomModel newModel = roomMapper.addRoom(model);
         }
     }
 
     @Override
     public Room addRoom(@NotNull NewRoom newRoom, @NotNull long hotelId) {
-        final var model = roomStruct.createRoom(newRoom,hotelId);
-        final var newModel = roomMapper.addRoom(model);
+        final RoomModel model = roomStruct.createRoom(newRoom,hotelId);
+        final RoomModel newModel = roomMapper.addRoom(model);
         return roomStruct.fromModel(model, newModel.getId());
     }
 
@@ -77,7 +77,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Room updateRoom(@NotNull long id, @NotNull NewRoom room) {
-        final var model = roomStruct.createRoom(room);
+        final RoomModel model = roomStruct.createRoom(room);
         model.setId(id);
         roomMapper.updateRoom(model);
         return roomStruct.fromModel(model);
