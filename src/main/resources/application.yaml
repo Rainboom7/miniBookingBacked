@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/minibooking
-    username: postgres
-    password: rainbow7
+    url: jdbc:postgresql://ec2-52-31-233-101.eu-west-1.compute.amazonaws.com:5432/dffir4iiaufuuk
+    username: zvxiqorrgyiqgo
+    password: 36952bb29ac2b84c5b697ea15e1a654448e94284427968d0b2f2a3db577fe1d9
   liquibase:
-    user: postgres
-    url: jdbc:postgresql://localhost:5432/minibooking
+    user: zvxiqorrgyiqgo
+    url: jdbc:postgresql://ec2-52-31-233-101.eu-west-1.compute.amazonaws.com:5432/dffir4iiaufuuk
     change-log: classpath*:migrations/master-changelog.yaml
 mybatis:
   configuration:

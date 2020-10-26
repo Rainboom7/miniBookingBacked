@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/miniBooking.iml" filepath="$PROJECT_DIR$/.idea/modules/miniBooking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bd/miniBooking.bd.iml" filepath="$PROJECT_DIR$/.idea/modules/bd/miniBooking.bd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bd/miniBooking.bd.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bd/miniBooking.bd.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bd/miniBooking.bd.test.iml" filepath="$PROJECT_DIR$/.idea/modules/bd/miniBooking.bd.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons/miniBooking.commons.iml" filepath="$PROJECT_DIR$/.idea/modules/commons/miniBooking.commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons/miniBooking.commons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/commons/miniBooking.commons.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons/miniBooking.commons.test.iml" filepath="$PROJECT_DIR$/.idea/modules/commons/miniBooking.commons.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/miniBooking.main.iml" filepath="$PROJECT_DIR$/.idea/modules/miniBooking.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/miniBooking.security.iml" filepath="$PROJECT_DIR$/.idea/modules/security/miniBooking.security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/miniBooking.security.main.iml" filepath="$PROJECT_DIR$/.idea/modules/security/miniBooking.security.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/miniBooking.security.test.iml" filepath="$PROJECT_DIR$/.idea/modules/security/miniBooking.security.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/miniBooking.services.iml" filepath="$PROJECT_DIR$/.idea/modules/services/miniBooking.services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/miniBooking.services.main.iml" filepath="$PROJECT_DIR$/.idea/modules/services/miniBooking.services.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/miniBooking.services.test.iml" filepath="$PROJECT_DIR$/.idea/modules/services/miniBooking.services.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/miniBooking.test.iml" filepath="$PROJECT_DIR$/.idea/modules/miniBooking.test.iml" />
+    </modules>
+  </component>
+</project>

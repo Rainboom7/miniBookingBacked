@@ -7,6 +7,9 @@ import ru.relex.miniBooking.bd.DataBaseConfig;
 import ru.relex.miniBooking.security.SecurityConfig;
 import ru.relex.miniBooking.services.ServicesConfiguration;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 @SpringBootApplication
 @Import({ServicesConfiguration.class,
         SecurityConfig.class,
