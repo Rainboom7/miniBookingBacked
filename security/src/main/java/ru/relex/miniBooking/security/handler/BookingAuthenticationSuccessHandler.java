@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.rmi.ServerException;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class BookingAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -52,7 +54,7 @@ public class BookingAuthenticationSuccessHandler implements AuthenticationSucces
                 .setAuthentication ( new UsernamePasswordAuthenticationToken (
                         profile,
                         null,
-                        Set.of ( new SimpleGrantedAuthority ( "ROLE_" + profile.getRole ( ).name ( ) ) ) ) );
+                        new HashSet<SimpleGrantedAuthority> ( Collections.singleton ( new SimpleGrantedAuthority ( "ROLE_" + profile.getRole ( ).name ( ) ) ) ) ) );
         OBJECT_MAPPER.writeValue ( response.getWriter ( ), profile );
 
     }

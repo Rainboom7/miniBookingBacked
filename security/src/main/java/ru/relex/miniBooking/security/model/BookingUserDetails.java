@@ -6,6 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import ru.relex.miniBooking.bd.model.UserModel;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class BookingUserDetails implements UserDetails {
@@ -20,7 +22,7 @@ public class BookingUserDetails implements UserDetails {
         this.username = userModel.getUsername ( );
         this.locked = userModel.isLocked ( );
         this.active = userModel.isActive ( );
-        this.authorities = Set.of ( new SimpleGrantedAuthority ( userModel.getRole ( ).name ( ) ) );
+        this.authorities = new HashSet<SimpleGrantedAuthority> ( Collections.singleton ( new SimpleGrantedAuthority ( userModel.getRole ( ).name ( ) ) ) );
     }
 
 
