@@ -1,6 +1,7 @@
 plugins {
     id 'java'
 }
+
 ext {
     bootVer = "2.3.1.RELEASE"
     junitVer = "5.7.0-M1"
@@ -37,15 +38,17 @@ allprojects {
         useJUnitPlatform()
     }
 }
-
-task stage {
-    dependsOn build
+jar {
+    manifest {
+        attributes 'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
+
 dependencies {
     implementation(project(":services"))
     implementation(project(":security"))
     implementation(project(":bd"))
-
     implementation "org.springframework.boot:spring-boot-starter-web:$bootVer"
     implementation "org.springframework:spring-web:5.2.6.RELEASE"
     implementation "javax.validation:validation-api:2.0.1.Final"
