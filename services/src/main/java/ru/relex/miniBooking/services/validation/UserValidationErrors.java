@@ -1,6 +1,7 @@
 package ru.relex.miniBooking.services.validation;
 
 import java.util.Map;
+import java.util.Map.*;
 
 public class UserValidationErrors {
 
