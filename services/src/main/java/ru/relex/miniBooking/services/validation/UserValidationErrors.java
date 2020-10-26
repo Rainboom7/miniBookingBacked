@@ -16,7 +16,7 @@ public class UserValidationErrors {
     public static final String ROLE_MUST_BE_SET = "ROLE_MUST_BE_SET";
     public static final String LOCATION_DESCRIPTION_IS_INVALID = "LOCATION_DESCRIPTION_IS_INVALID";
 
-    private static final Map<String, String> ERRORS =new HashMap<> ( ) {
+    private static final Map<String, String> ERRORS =new HashMap<String, String> ( ) {
         {
                      put ( ROLE_MUST_BE_SET, "Role must be set" );
                     put ( PERSONAL_INFO_MUST_BE_SET, "Personal info must be set" );
