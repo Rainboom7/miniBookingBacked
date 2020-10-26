@@ -59,11 +59,11 @@ task uberJar(type: Jar, dependsOn: subprojects.assemble) {
    
 }
 dependencies {
-    implementation(project(":services"))
-    implementation(project(":security"))
-    implementation(project(":bd"))
-    implementation "org.springframework.boot:spring-boot-starter-web:$bootVer"
-    implementation "org.springframework:spring-web:5.2.6.RELEASE"
-    implementation "javax.validation:validation-api:2.0.1.Final"
+    compile(project(":services"))
+    compile(project(":security"))
+    compile(project(":bd"))
+    compile "org.springframework.boot:spring-boot-starter-web:$bootVer"
+    compile "org.springframework:spring-web:5.2.6.RELEASE"
+    compile "javax.validation:validation-api:2.0.1.Final"
 
 }
