@@ -17,8 +17,8 @@ allprojects {
     }
 
     java {
-        sourceCompatibility = JavaVersion.current()
-        targetCompatibility = JavaVersion.current()
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     dependencies {
         testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVer"
@@ -37,22 +37,10 @@ allprojects {
         useJUnitPlatform()
     }
 }
-jar {
-    from {
-        configurations.runtime.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-    manifest {
-        attributes 'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
-    }
 
-    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+task stage {
+    dependsOn build
 }
-
 dependencies {
     implementation(project(":services"))
     implementation(project(":security"))
