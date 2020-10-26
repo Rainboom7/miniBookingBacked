@@ -1,6 +1,5 @@
 rootProject.name = 'miniBooking'
 include 'services'
 include 'security'
-include 'bd'
 include 'commons'
-
+include 'bd'

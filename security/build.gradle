@@ -1,6 +1,6 @@
 dependencies {
     implementation(project(":services"))
-    implementation(project(":bd"))
+    compile project(path: ":bd")
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '5.3.3.RELEASE'
     implementation 'org.springframework.security:spring-security-web:5.3.3.RELEASE'
     implementation 'org.springframework.security:spring-security-core:5.3.3.RELEASE'
