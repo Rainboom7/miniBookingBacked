@@ -37,7 +37,13 @@ allprojects {
         useJUnitPlatform()
     }
 }
-
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
+        )
+    }
+}
 
 dependencies {
     implementation(project(":services"))
