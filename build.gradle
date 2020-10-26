@@ -38,11 +38,19 @@ allprojects {
     }
 }
 jar {
-    manifest {
-        attributes(
-                'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
-        )
+    from {
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
     }
+    manifest {
+        attributes 'Main-Class': 'ru.relex.miniBooking.rest.BookingBootApp'
+    }
+
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
 }
 
 dependencies {
