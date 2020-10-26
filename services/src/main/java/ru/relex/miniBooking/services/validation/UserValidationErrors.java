@@ -1,5 +1,6 @@
 package ru.relex.miniBooking.services.validation;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -15,14 +16,15 @@ public class UserValidationErrors {
     public static final String ROLE_MUST_BE_SET = "ROLE_MUST_BE_SET";
     public static final String LOCATION_DESCRIPTION_IS_INVALID = "LOCATION_DESCRIPTION_IS_INVALID";
 
-    private static final Map<String, String> ERRORS = Map.ofEntries (
-            Map.entry ( ROLE_MUST_BE_SET, "Role must be set" ),
-            Map.entry ( PERSONAL_INFO_MUST_BE_SET, "Personal info must be set" ),
-            Map.entry ( FIRST_NAME_LENGTH_IS_INVALID, "Invalid first name length" ),
-            Map.entry ( LAST_NAME_LENGTH_IS_INVALID, "Invalid last name length" ),
-            Map.entry ( EMAIL_HAS_INVALID_FORMAT, "Email should be of pattern ****@**.**" ),
-            Map.entry ( LOCATION_DESCRIPTION_IS_INVALID,"Chek tour location description" )
-    );
+    private static final Map<String, String> ERRORS =new HashMap<> ( ) {
+        {
+                     put ( ROLE_MUST_BE_SET, "Role must be set" );
+                    put ( PERSONAL_INFO_MUST_BE_SET, "Personal info must be set" );
+                    put ( FIRST_NAME_LENGTH_IS_INVALID, "Invalid first name length" );
+                    put ( LAST_NAME_LENGTH_IS_INVALID, "Invalid last name length" );
+                    put ( EMAIL_HAS_INVALID_FORMAT, "Email should be of pattern ****@**.**" );
+                    put ( LOCATION_DESCRIPTION_IS_INVALID, "Chek tour location description" );
+        }};
 
 
     public static String getMessageByCode ( String code ) {
